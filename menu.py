@@ -34,7 +34,26 @@ class Bebida(ItemMenu):
 class Menu:
     def __init__(self):
         self.entradas = []
-        self.plato_principal = []
+        self.plato_principales = []
         self.postres = []
         self.bebidas = []
-        
+    
+    def agregarEntrada(self, nombre, precio):
+        entrada = Entrada(nombre, precio)
+        self.entradas.append(entrada)
+        return entrada    
+    
+    def agregar_plato_principal(self, nombre, precio):
+        plato = PlatoPrincipal(nombre, precio)
+        self.plato_principales.append(plato)
+        return plato   
+    
+    def agregar_postre(self, nombre, precio):
+        postre = Postre(nombre, precio)
+        self.postres.append(postre)
+        return postre 
+    
+    def agregar_bebida(self, nombre, precio):
+        bebida = Bebida(nombre, precio)
+        self.bebidas.append(bebida)
+        return bebida
