@@ -38,7 +38,7 @@ class Menu:
         self.postres = []
         self.bebidas = []
     
-    def agregarEntrada(self, nombre, precio):
+    def agregar_entrada(self, nombre, precio):
         entrada = Entrada(nombre, precio)
         self.entradas.append(entrada)
         return entrada    
@@ -75,5 +75,33 @@ class Menu:
                items.remove(item)
                return True
         return False    
-            
+    
+    def eliminar_entrada(self, nombre):
+        return self.eliminar_item(tipo:"Entrada", nombre)
+    
+    def eliminar_plato_principal(self, nombre):
+        return self.eliminar_item(tipo:"Plato Principal", nombre) # type: ignore
+    
+    def eliminar_postre(self, nombre):
+        return self.eliminar_item (tipo:"Postre", nombre) # type: ignore
+    
+    def eliminar_bebida(self, nombre):
+        return self.eliminar_item(tipo:"Bebida", nombre) # type: ignore
+    
+    def obtener_item(self, tipo, nombre):
+        if tipo == "Entradas":
+            items = self.entradas
+        if tipo == "Plato Principal":
+            items = self.plato_principales
+        if tipo == "Postres":
+            items = self.postres
+        if tipo == "Bebidas":
+            items = self.bebidas
+        else:
+            return None
+        
+        for item in items [:]:
+            if item.nombre == nombre:
+               return item
+        return None        
                         
