@@ -57,3 +57,23 @@ class Menu:
         bebida = Bebida(nombre, precio)
         self.bebidas.append(bebida)
         return bebida
+    
+    def eliminar_item(self, tipo, nombre):
+        if tipo == "Entradas":
+            items = self.entradas
+        if tipo == "Plato Principal":
+            items = self.plato_principales
+        if tipo == "Postres":
+            items = self.postres
+        if tipo == "Bebidas":
+            items = self.bebidas
+        else:
+            return False
+        
+        for item in items [:]:
+            if item.nombre == nombre:
+               items.remove(item)
+               return True
+        return False    
+            
+                        
