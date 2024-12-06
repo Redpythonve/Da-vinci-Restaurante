@@ -12,4 +12,11 @@ class Cliente:
         self.pedido_actual = pedido
         
     def obtener_total_actual(self):
-        return self.pedido_actual.calcular_total() if self.pedido_actual else 0     
+        return self.pedido_actual.calcular_total() if self.pedido_actual else 0   
+    
+    def limpiar_pedido(self):
+        self.pedido_actual = None
+        
+    @classmethod
+    def reiniciar_contador(cls):
+        cls._next_id = 1  

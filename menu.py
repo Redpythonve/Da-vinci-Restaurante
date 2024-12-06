@@ -77,7 +77,7 @@ class Menu:
         return False    
     
     def eliminar_entrada(self, nombre):
-        return self.eliminar_item(tipo:"Entrada", nombre)
+        return self.eliminar_item(tipo:"Entrada", nombre) # type: ignore
     
     def eliminar_plato_principal(self, nombre):
         return self.eliminar_item(tipo:"Plato Principal", nombre) # type: ignore
